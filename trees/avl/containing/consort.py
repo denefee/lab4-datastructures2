@@ -15,7 +15,7 @@ f.close()
 
 plt.xlabel(r'Количество поищенных из массива элементов', fontsize=14)
 plt.ylabel(r'Время поиска элемента в массиве, $нс$', fontsize=14)
-plt.title(r'Асимптотика contain при отсортированных значениях, k=0.147', fontsize=14)
+plt.title(r'Асимптотика contain при отсортированных значениях, k=0.201', fontsize=14)
 plt.grid(True)
 plt.errorbar(x, y, xerr=0, yerr=0, fmt='+', color='black', capsize=3)
 p = np.polyfit(x, y, 1, cov=True)

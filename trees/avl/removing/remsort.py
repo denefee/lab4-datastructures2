@@ -15,7 +15,7 @@ f.close()
 
 plt.xlabel(r'Количество удалённых из массива элементов', fontsize=14)
 plt.ylabel(r'Время удаления элемента из массива, $нс$', fontsize=14)
-plt.title(r'Асимптотика remove при отсортированных значениях, k=-0.113', fontsize=14)
+plt.title(r'Асимптотика remove при отсортированных значениях, k=0.09', fontsize=14)
 plt.grid(True)
 plt.errorbar(x, y, xerr=0, yerr=0, fmt='+', color='black', capsize=3)
 p = np.polyfit(x, y, 1, cov=True)
