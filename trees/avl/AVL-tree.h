@@ -80,7 +80,6 @@ int get_balance(AVL_tree *node) {
     return height(node->left) - height(node->right);
 }
 
-
 AVL_tree *insert_node(AVL_tree *node, int key) {
     // поиск места вставки и рекурсивная вставка
     if (node == nullptr)
@@ -94,19 +93,19 @@ AVL_tree *insert_node(AVL_tree *node, int key) {
         return node;
 
     // балансировка дерева
-    node->height = 1 + max(height(node->left),height(node->right));
+    node->height = 1 + max(height(node->left), height(node->right));
 
     int balance = get_balance(node);
     if (balance > 1 && key < node->left->key)
         return right_rotate(node);
 
-    if (balance < -1 && key > node->right->key)
-        return left_rotate(node);
-
     if (balance > 1 && key > node->left->key) {
         node->left = left_rotate(node->left);
         return right_rotate(node);
     }
+
+    if (balance < -1 && key > node->right->key)
+        return left_rotate(node);
 
     if (balance < -1 && key < node->right->key) {
         node->right = right_rotate(node->right);
